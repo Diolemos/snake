@@ -3,7 +3,8 @@ class Snake:
     def __init__(self):
         self.body = []
         self.create_body()
-        self.head = self.body[0]       
+        self.head = self.body[0] 
+        self.current_direction = "right"      
     def create_body(self):
         x_axis = 0
         for _ in range(3):
@@ -22,15 +23,24 @@ class Snake:
         self.body[0].fd(20)     
     
     
-    def up(self):
-        self.head.setheading(90)
-        
-    def down(self): 
-        self.head.setheading(270)
     
-    def  left(self):  
-        self.head.setheading(180)    
-        
-    def right(self): 
-        self.head.setheading(00)        
+    def up(self):
+        if self.current_direction != "down":
+            self.current_direction = "up"
+            self.head.setheading(90)
+
+    def down(self):
+        if self.current_direction != "up":
+            self.current_direction = "down"
+            self.head.setheading(270)
+
+    def left(self):
+        if self.current_direction != "right":
+            self.current_direction = "left"
+            self.head.setheading(180)
+
+    def right(self):
+        if self.current_direction != "left":
+            self.current_direction = "right"
+            self.head.setheading(0)     
             
