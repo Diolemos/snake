@@ -2,6 +2,7 @@ from turtle import Turtle
 class Snake:
     def __init__(self):
         self.body = []
+        self.create_body()
         
     def create_body(self):
         x_axis = 0

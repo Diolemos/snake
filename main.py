@@ -10,7 +10,9 @@ screen.tracer(0)
 game_is_on = True 
 
 snake = Snake()
-snake.create_body()
+
+
+
 
 
 while game_is_on:
