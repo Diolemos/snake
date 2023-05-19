@@ -1,4 +1,5 @@
 from snake import Snake
+from food import Food
 import time
 from turtle import Screen
 
@@ -10,7 +11,7 @@ screen.tracer(0)
 game_is_on = True 
 
 snake = Snake()
-
+food = Food()
 screen.listen()
 
 screen.onkey(snake.up,'Up')
@@ -27,6 +28,9 @@ while game_is_on:
     
     snake.move()
 
+    if snake.head.distance(food) < 15:
+        print("Yammi fruit:P")
+        food.refresh()
 
 
 
