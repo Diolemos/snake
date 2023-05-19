@@ -1,19 +1,29 @@
+STARTING_POSITIONS = [(0,0),(-20,0),(-40,0)]
 from turtle import Turtle
 class Snake:
     def __init__(self):
         self.body = []
         self.create_body()
         self.head = self.body[0] 
+        self.tail = self.body[-1]
         self.current_direction = "right"      
     def create_body(self):
-        x_axis = 0
-        for _ in range(3):
-            new_segment = Turtle(shape='square')
-            new_segment.color('white')
-            new_segment.penup()
-            new_segment.goto(x=x_axis,y=0)
-            self.body.append(new_segment)
-            x_axis += 20
+        
+        for position in STARTING_POSITIONS:
+            self.add_segment(position)
+            
+    def add_segment(self, position):
+        new_segment = Turtle(shape='square')
+        new_segment.color('white')
+        new_segment.penup()
+        new_segment.goto(position)#position
+        self.body.append(new_segment)
+        # x_axis += 20
+    def extend(self):
+        self.add_segment(self.tail.position())
+            
+            
+                  
         
     def move(self):
         for index in range(len(self.body)-1,0,-1):

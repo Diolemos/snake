@@ -34,6 +34,7 @@ while game_is_on:
         print("Yammi fruit:P")
         
         food.refresh()
+        snake.extend()
         scoreboard.increase_score()
 
 #detect collision with wall
