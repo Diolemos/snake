@@ -30,10 +30,11 @@ while game_is_on:
     
     snake.move()
 
-    if snake.head.distance(food) < 15:
+    if snake.head.distance(food) < 17:
         print("Yammi fruit:P")
+        
         food.refresh()
-
+        scoreboard.increase_score()
 
 
 

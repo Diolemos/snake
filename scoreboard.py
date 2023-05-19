@@ -1,3 +1,6 @@
+ALIGNMENT = 'center'
+FONT = ('courier',24,'normal')
+
 from turtle import Turtle
 
 class Scoreboard(Turtle):
@@ -7,6 +10,11 @@ class Scoreboard(Turtle):
         self.pensize()
         self.goto(0,269)
         self.color('white')
-        self.write(f"Score: {self.score}",move=False,align='center', font=('arial',24,'normal'))
+        self.write(f"Score: {self.score}",move=False,align=ALIGNMENT, font=FONT)
         self.hideturtle()
+        
+    def increase_score(self):
+        self.score += 1
+        self.clear()
+        self.write(f"Score: {self.score}",move=False,align='center', font=('arial',24,'normal'))
         
