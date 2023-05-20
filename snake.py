@@ -19,10 +19,18 @@ class Snake:
         new_segment.goto(position)#position
         self.body.append(new_segment)
         # x_axis += 20
+    
+    def reset(self):
+        for seg in self.body:
+            seg.goto(1000,100)
+        self.body.clear()
+        self.create_body()
+        self.head = self.body[0]
+            
+    
+    
     def extend(self):
-        self.add_segment(self.tail.position())
-            
-            
+        self.add_segment(self.tail.position())                  
                   
         
     def move(self):
